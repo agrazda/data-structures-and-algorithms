@@ -77,6 +77,11 @@ const greeting = (word) => `${word.toUpperCase()}!`
 const speaker = (words, callback) => {
   const newArray = []
   // Solution code here...
+
+  speaker.forEach.push()
+
+
+  return newArray
 };
 
 
