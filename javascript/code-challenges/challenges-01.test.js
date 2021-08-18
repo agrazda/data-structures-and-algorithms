@@ -29,13 +29,15 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 ------------------------------------------------------------------------------------------------ */
 
 const addExclamation = (arr) => {
+  // Creating a new array to push the result of our forEach into.
   const newArray = []
   // Solution code here...
-
+//for each string in arr 
   arr.forEach(greet => {
+    //add exlimation point to end of string and push into new array
     newArray.push(`${greet}!`);
   })
-
+// return the new array with new strings
   return newArray;
 
 };
@@ -78,8 +80,10 @@ const speaker = (words, callback) => {
   const newArray = []
   // Solution code here...
 
-  speaker.forEach.push()
-
+  
+  words.forEach((word) => {
+    newArray.push(callback(word))
+  })
 
   return newArray
 };
@@ -103,11 +107,17 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
+  arr.push(value);
   // Solution code here...
+
 };
 
 const addNumbers = (num, arr, times, callback) => {
-  // Solution code here...
+  for (let i = 0; i < times; i++) {
+    callback(arr, num)
+  }
+  // Solution code here..
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
