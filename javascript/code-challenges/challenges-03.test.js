@@ -28,15 +28,9 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const typeNum = (arr) => {
-  const numOnly = (val) =>{
-    if(typeof(Val) ==='Number'){
-      console.log(numOnly)
-      return numOnly
-    }
-  }
-};
+  return arr.filter(number =>)
 
-
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
