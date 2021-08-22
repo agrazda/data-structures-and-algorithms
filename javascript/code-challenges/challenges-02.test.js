@@ -11,9 +11,10 @@ Write a function named raisedToTheThird that takes in an array of numbers and re
 const raisedToTheThird = (arr) => {
   const newArray = []
   // Solution code here...
-  arr.forEach(element => {
-    
+  arr.forEach((x) => {
+    newArray.push(Math.pow(x, 3));
   });
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -35,6 +36,7 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 
 const addQuestion = (arr) => {
   // Solution code here...
+  return arr.map(quest => quest + "?")
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -48,6 +50,13 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 ------------------------------------------------------------------------------------------------ */
 
 const forLoopTwoToThe = (arr) => {
+  const newArray = [];
+  for (let i = 0; i < arr.length; i++) {
+     newArray.push(Math.pow (2, arr[i]));
+   
+  }
+
+return newArray 
   // Solution code here...
 };
 
@@ -58,6 +67,12 @@ Write a function named forEachTwoToThe that produces the same output as your for
 ------------------------------------------------------------------------------------------------ */
 
 const forEachTwoToThe = (arr) => {
+  const newArray=[];
+
+  arr.forEach((num) =>{
+    newArray.push(Math.pow (2, num))
+  })
+ return newArray
   // Solution code here...
 };
 
@@ -69,6 +84,11 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 
 const mapTwoToThe = (arr) => {
   // Solution code here...
+  const newArray=[];
+  arr.map((num)=>{
+    newArray.push(Math.pow(2, num))
+  })
+  return newArray
 };
 
 /* ------------------------------------------------------------------------------------------------
