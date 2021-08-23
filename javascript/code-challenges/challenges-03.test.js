@@ -28,9 +28,9 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const typeNum = (arr) => {
-  return arr.filter(number =>)
+  return arr.filter((arrNum) => Number.isInteger(arrNum))
 
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -42,6 +42,7 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 
 const containsAnd = (arr) => {
   // Solution code here...
+  return arr.filter((arrString) => String.isString(arrString))
 };
 
 /* ------------------------------------------------------------------------------------------------
