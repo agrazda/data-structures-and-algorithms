@@ -42,7 +42,7 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 
 const containsAnd = (arr) => {
   // Solution code here...
-  return arr.filter((arrString) => String.isString(arrString))
+  return arr.filter((arrString) => arrString.includes("and"))
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -53,7 +53,8 @@ Write a function named oddValues that, given an array of integers as input, uses
 For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
-const oddValues = (arr) => {
+const oddValues = (arr) => { 
+  return arr.filter ((arrItems) => arrItems % 2);
   // Solution code here...
 };
 
@@ -66,7 +67,10 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
+  return arr.filter((filteredArrItems) => {
+     // Solution code here...
+    return !forbiddenValues.includes(filteredArrItems);
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
