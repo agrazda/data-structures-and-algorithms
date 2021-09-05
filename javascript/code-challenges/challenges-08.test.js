@@ -65,10 +65,8 @@ Write a function named containsW that takes in a string. This function should us
 
 ------------------------------------------------------------------------------------------------ */
 
-const containsW = (str) => {
-  let doubleU = /w/g;
-  return doubleU.test(str);
-}; 
+const containsW = (str) => /w/g.test(str);
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -82,10 +80,8 @@ For example:
 'hello world' returns false
 ------------------------------------------------------------------------------------------------ */
 
-const isNum = (input) => {
- let numlength= /[0-9]/g
- return numlength.test(input);
-};
+const isNum = (input) => /[0-9]/g.test(input);
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -94,10 +90,8 @@ Write a function named containsWorld that takes in a string or number of any len
 
 ------------------------------------------------------------------------------------------------ */
 
-const containsWorld = (input) => {
-  let globe= /world/g
-  return globe.test(input)
-};
+const containsWorld = (input) => /world/g.test(input)
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
