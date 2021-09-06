@@ -102,8 +102,8 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  let capital = /\b(\w)/g
-  return capital.match(str)
+  return str.match(/[A-Z]\w+/g) || []
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -114,9 +114,10 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
+  return (/^[A-J][a-z]\w+/g)
 };
+/*------------------------------------------------------------------------------------------------
 
-/* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
 You have created a game application and begin by asking users an easy question: In which month is Halloween?
