@@ -131,7 +131,7 @@ const getHouses = (arr) => {
 };
 
 /*------------------------------------------------------------------------------------------------
-CHALLENGE 6
+CHALLENGE 6 
 
 Write a function named hasChildrenValues that uses Object.values to determine if any given character in the data set has children.
 
