@@ -31,6 +31,17 @@ return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
   // Solution code here...
+let highest =0
+
+  for (let i = 0; i < matrix.length; i++) {
+    
+    for (let j = 0; j < matrix.length; j++) {
+      if (matrix[i][j] > highest) {
+        highest= matrix[i][j];
+      }
+    }
+  }
+  return highest;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -49,6 +60,15 @@ return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
   // Solution code here...
+  let sum = 0
+
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      sum= sum + matrix[i][j];
+      
+    }    
+  }
+  return sum;
 };
 
 
@@ -76,7 +96,17 @@ const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
   // Solution code here...
+  let results = [];
 
+  for (let i = 0; i < hoursOpen.length; i++){
+    let hourTotal = 0;
+    for (let store of cookieStores){
+      hourTotal += store[i];
+    }
+    results.push(hourTotal);
+  }
+
+  return results;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -91,6 +121,13 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 
 const salesData = (hours, data) => {
   // Solution code here...
+  const result = [];
+  for(let i = 0; i < 12; i++) {
+    let timeStr = `${data[i]} cookies`;
+    result.push({sales: timeStr, time: hours[i]});
+  }
+
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -116,6 +153,13 @@ const errands = [
 
 const howManyTreats = (arr) => {
   // Solution code here...
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].items.length; j++) {
+      if (arr[i].items[j].name === 'Treats') {
+        return arr[i].items[j].quantity;
+      }
+    }
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
