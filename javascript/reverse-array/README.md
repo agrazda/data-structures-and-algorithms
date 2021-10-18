@@ -1,6 +1,6 @@
 # Reverse Array
 
-Inclueds a functionthat takes in some array, and returns an array with all the elements in revese order.
+Inclueds a function that takes in some array, and returns an array with all the elements in revese order.
 
 ## Inputs /Outputs
 
@@ -18,7 +18,7 @@ If we can grab the ens of the array, we can just swap their values
 
 
 ## Pseudocode  
-### Formalize the opperations
+### Formalize the operations
 
 ```
 Reverse Array takes in `arr`:
@@ -45,4 +45,4 @@ Reverse Array takes in `arr`:
 
 
 ## Visual 
-![Reverse Array Whiteboard]()
+![Reverse Array Whiteboard](reverse-array.png)
