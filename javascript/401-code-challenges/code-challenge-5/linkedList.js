@@ -1,70 +1,131 @@
-'use strict';
+"use strict";
 
 class Node {
-    constructor(value) {
-        this.value=value;
-        this.next=null;
-    }
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
 }
 
 class LinkedList {
-    constructor(node = null) {
-        this.head=node;
+  constructor(node = null) {
+    this.head = node;
+  }
+
+  insert(value) {
+    let node = new Node(value);
+    if (!this.head) {
+      this.head = node;
+    } else {
+      node.next = this.head;
+      this.head = node;
+    }
+    return this;
+  }
+
+  includes(value) {
+    let current = this.head;
+
+    while (current) {
+      if (current.value === value) {
+        return true;
+      }
+
+      current = current.next;
+    }
+    return false;
+  }
+
+  toString() {
+    let current = this.head;
+    let array = [];
+    let string = "";
+
+    if (!current) {
+      return "list is empty";
     }
 
-    insert(value){
-        let node = new Node (value);
-        if(!this.head){
-            this.head = node
-        }else {
-            node.next = this.head;
-            this.head=node;
-        }
-        return this
+    while (current) {
+      array.push(current.value);
+      current.next;
     }
 
+    array.forEach((index) => {
+      string = string.concat("{${index}} ->");
+      console.log("STRING CONCAT", string);
+    });
+    string = "${string}NULL";
+    return string;
+  }
 
-    includes(value){
-        let current = this.head;
+  append(value) {
+    let node = new Node(value);
+    if (!this.head) {
+      this.head = node;
+      return head;
+    }
+    let current = this.head;
+    while (current.next) {
+      current = current.next;
+    }
+    current.next = node;
+    return head;
+  }
 
-        while(current) {
-            if(current.value === value) {
-                return true
-            }
+  insertBefore(value, newValue) {
+      
+    if(!this.includes(value)) {
+        return 'Value not in Linked List'
+    } else {
+      let previousNode = null;
+      let current = this.head;
 
-            current = current.next
-        }
-        return false
+      while(current.value != value){
+         previousNode = current;
+         current=current.next;        
+      }
+
+        let newNode = new Node(newValue);
+      newNode.next = previousNode.next;
+      previousNode.next = newNode;
+      console.log(newNode)
+      return newNode;
+    }
+  }
+
+  insertAfter(value, newValue) {
+    if(!this.includes(value)) {
+      return 'Value not in Linked List'
+  } else {
+    let current = this.head;
+    let previousNode = this.head;
+
+    while(current.value != value){
+      previousNode = current;
+      current = current.next;    
     }
 
-    toString(){
-        let current = this.head;
-        let array = [];
-        let string = '';
+      let newNode = new Node(newValue);
+      newNode.next=current.next;
+      current.next = newNode;
+      previousNode.next = newNode;
 
-        if(!current) {
-            return('list is empty');
-        }
-
-        while(current) {
-            array.push(current.value)
-            current.next
-        } 
-        
-        array.forEach(index => {
-            string =string.concat('{${index}} ->')
-            console.log('STRING CONCAT', string)
-        })
-        string = '${string}NULL'
-        return string
+    console.log(newNode)
+    return newNode;
     }
+  }
+
 }
-// const list = new LinkedList(
-//     );
-    
-//     list.head = new Node(10);
-//     list.head.next = new Node(25);
-//     list.head.next.next = new Node(2);
-//     list.head.next.next.next = new Node(13);
+const list = new LinkedList(
+    );
 
-module.exports = {Node, LinkedList}
+    list.head = new Node(10);
+    list.head.next = new Node(25);
+    list.head.next.next = new Node(2);
+    list.head.next.next.next = new Node(13);
+
+
+list.insertAfter(25, 8)
+
+
+module.exports = { Node, LinkedList };
