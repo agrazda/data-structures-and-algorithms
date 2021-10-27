@@ -73,59 +73,79 @@ class LinkedList {
   }
 
   insertBefore(value, newValue) {
-      
-    if(!this.includes(value)) {
-        return 'Value not in Linked List'
+    if (!this.includes(value)) {
+      return "Value not in Linked List";
     } else {
       let previousNode = null;
       let current = this.head;
 
-      while(current.value != value){
-         previousNode = current;
-         current=current.next;        
+      while (current.value != value) {
+        previousNode = current;
+        current = current.next;
       }
 
-        let newNode = new Node(newValue);
+      let newNode = new Node(newValue);
       newNode.next = previousNode.next;
       previousNode.next = newNode;
-      console.log(newNode)
+      console.log(newNode);
       return newNode;
     }
   }
 
   insertAfter(value, newValue) {
-    if(!this.includes(value)) {
-      return 'Value not in Linked List'
-  } else {
-    let current = this.head;
-    let previousNode = this.head;
+    if (!this.includes(value)) {
+      return "Value not in Linked List";
+    } else {
+      let current = this.head;
+      let previousNode = this.head;
 
-    while(current.value != value){
-      previousNode = current;
-      current = current.next;    
-    }
+      while (current.value != value) {
+        previousNode = current;
+        current = current.next;
+      }
 
       let newNode = new Node(newValue);
-      newNode.next=current.next;
+      newNode.next = current.next;
       current.next = newNode;
       previousNode.next = newNode;
 
-    console.log(newNode)
-    return newNode;
+      console.log(newNode);
+      return newNode;
     }
   }
 
+  kthFromEnd(k) {
+    let current = this.head;
+    let position = 0;
+    let array = [];
+
+    while (current) {
+      array.push(current.value);
+      position++;
+      current = current.next;
+    }
+
+    if (k >= position) {
+      return "number is too high";
+    }
+
+    if (k < 0) {
+      return "use a higher number";
+    }
+
+    let lastIndexPosition = position - k - 1;
+    console.log(array);
+    console.log("position", position);
+    return array[lastIndexPosition];
+  }
 }
-const list = new LinkedList(
-    );
+const list = new LinkedList();
 
-    list.head = new Node(10);
-    list.head.next = new Node(25);
-    list.head.next.next = new Node(2);
-    list.head.next.next.next = new Node(13);
+list.head = new Node(10);
+list.head.next = new Node(25);
+list.head.next.next = new Node(2);
+list.head.next.next.next = new Node(13);
 
-
-list.insertAfter(25, 8)
-
+console.log(list.kthFromEnd(0));
 
 module.exports = { Node, LinkedList };

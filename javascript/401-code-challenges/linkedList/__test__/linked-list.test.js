@@ -72,5 +72,25 @@ describe(' Linked List', () => {
 
     });
 
+    xit('Where k is greater than the length of the linked list', () => {
+
+    });
+
+    xit('Where k and the length of the list are the same', () => {
+
+    });
+
+    xit('Where k is not a positive integer', () => {
+
+    });
+
+    xit('Where the linked list is of a size 1', () => {
+
+    });
+
+    xit('“Happy Path” where k is not at the end, but somewhere in the middle of the linked list', () => {
+
+    });
+
 })
 
