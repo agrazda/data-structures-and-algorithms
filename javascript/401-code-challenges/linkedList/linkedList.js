@@ -134,9 +134,30 @@ class LinkedList {
     }
 
     let lastIndexPosition = position - k - 1;
-    console.log(array);
-    console.log("position", position);
+    // console.log(array);
+    // console.log("position", position);
     return array[lastIndexPosition];
+  }
+
+  zipLists(list1, list2) {
+    let list1curr = list1.head;
+    let list2curr = list2.head;
+    let list1next = list1.next;
+    let list2next = list2.next;
+
+    while (list1curr != null && list2curr != null) {
+      
+      list1next = list1curr.next;
+      list2next = list2curr.next;
+
+      list2curr.next = list1next;
+      list1curr.next = list2curr;
+
+      list1curr = list1next;
+      list2curr = list2next;
+    }
+    list2 = list2curr;
+    return list2
   }
 }
 const list = new LinkedList();
