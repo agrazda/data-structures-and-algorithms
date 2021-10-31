@@ -2,7 +2,7 @@
 
 class Node {
     constructor(value){
-        this.value =value:
+        this.value =value;
         this.next = null
     }
 }
@@ -11,28 +11,34 @@ class Stack {
     constructor(){
         this.top = null;
     }
-
-    push(value){
-        this.top = new Node(value);
-        }
-
-    pop(){
-
-    }
-
+    // place element on top of stack
+    push(value) {
+        let previousTop = this.top;
+        let nodeToAdd = new Node(value);
+        nodeToAdd.next = previousTop;
+        this.top = nodeToAdd;
+      }
+    // remove element from the top of the stack    
+    pop() {
+        let takeAway = this.top;
+        this.top = takeAway.next;
+        return takeAway.value;
+      }
+ 
+    // look at the top element in the stack
     peek(){
-
+        let peak = this.top;
+        return peak; 
     }
-
+    // tell me if the stack is empty
     isEmpty(){
-
+        if(this.top===null)
+        return true;
+        }else(){
+        return false;
     }
 
-    traverse() {
-
-    }
-
-}
+  }
 
 class Queue {
     constructor() {
