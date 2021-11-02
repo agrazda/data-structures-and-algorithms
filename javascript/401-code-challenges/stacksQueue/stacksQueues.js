@@ -32,12 +32,12 @@ class Stack {
     }
     // tell me if the stack is empty
     isEmpty(){
-        if(this.top===null)
+        if(this.top===null){
         return true;
-        }else(){
+        }else{
         return false;
-    }
-
+        }
+    }    
   }
 
 class Queue {
@@ -46,8 +46,24 @@ class Queue {
         this.back = null;
     }
 
-    traverse(){
+    enqueue(value) {
+        
+    }
 
+    dequeue() {
+
+    }
+
+    peek(){
+
+    }
+
+    isEmpty(){
+        if(this.front === null && this.back === null){
+        return true;
+        }else{
+        return false;
+        }    
     }
 
 }
