@@ -39,3 +39,17 @@ class PseudoQueue {
     return this.stack2.top;
   }
 }
+
+let pseudoQueue = new PseudoQueue();
+
+    pseudoQueue.enqueue(1);
+    pseudoQueue.enqueue(2);
+    pseudoQueue.enqueue(3);
+    pseudoQueue.enqueue(4);
+    pseudoQueue.dequeue();
+    pseudoQueue.dequeue();
+    pseudoQueue.dequeue();
+    pseudoQueue.dequeue();
+    console.log(pseudoQueue);
+
+

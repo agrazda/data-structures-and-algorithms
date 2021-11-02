@@ -1,6 +1,6 @@
 'use strict';
 
-const {Node, LinkedList} = require('../stacksQueues.js')
+const {Stack , Queue} = require('../stacksQueues.js')
 
 
 
@@ -8,4 +8,4 @@ describe(' Stack ', () => {
 
     it('works', () => {
         expect(true).toBeTruthy();
-    });
+    }}
