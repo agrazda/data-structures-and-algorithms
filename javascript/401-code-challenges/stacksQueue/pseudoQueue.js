@@ -1,5 +1,5 @@
 "use strict";
-const { Stack } = require("../stacksQueue/stacksQueues.js");
+const { Stack } = require("./Stacks and Queues/stacksQueues.js");
 
 class PseudoQueue {
   stack1;
