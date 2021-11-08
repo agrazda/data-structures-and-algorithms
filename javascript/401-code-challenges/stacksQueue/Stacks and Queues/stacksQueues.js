@@ -77,6 +77,6 @@ class Queue {
         return this.front;
       }
     
-    }
-
 }
+
+
