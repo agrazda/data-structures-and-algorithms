@@ -1,9 +1,7 @@
-"use strict";
-
-const { insertAfter } = require("cheerio/lib/api/manipulation");
+'use strict';
 
 class Node {
-  constructer(value) {
+  constructor(value) {
     this.value = value;
     this.left = null;
     this.right = null;
@@ -17,8 +15,9 @@ class BinaryTree {
 }
 
 function PreOrder(current) {
-  // console.log(current.value);
-
+ 
+  console.log(current.value);
+  
   if (current.left) {
     PreOrder(current.left);
   }
@@ -27,60 +26,88 @@ function PreOrder(current) {
   }
 }
 
-function InOrder(current) {
+function InOrder(current) {  
   if (current.left) {
     InOrder(current.left);
   }
-  // console.log(current.value);
+  console.log(current.value);
 
   if (current.right) {
     InOrder(current.right);
   }
 }
 
-function PostOrder(current) {
+function PostOrder(current) {  
   if (current.left) {
     PostOrder(current.left);
   }
+  
   if (current.right) {
     PostOrder(current.right);
   }
-  // console.log(current.value);
+  console.log(current.value);
 }
 
-//   let tree = new BinaryTree();
+function FindMax(node) {
+  if (node == null)
+  return 
 
-// tree.root = new Node('1');
-// tree.root.left = new Node('2');
-// tree.root.left.left = new Node('3');
-// tree.root.left.left.left = new Node('4');
-// tree.root.left.right = new Node('5');
-// tree.root.right = new Node('6');
-// tree.root.right.right = new Node('7');
-// tree.root.right.right.left = new Node('8');
-// tree.root.right.right.right = new Node('9');
+  let result = node.value;
+  let leftResult = FindMax(node.left);
+  let rightResult = FindMax(node.right);
 
-// onsole.log('PreOrder');
-// PreOrder(tree.root);
-// console.log('----------')
-// console.log('InOrder');
-// InOrder(tree.root);
-// console.log('----------')
-// console.log('PostOrder');
-// PostOrder(tree.root);
+  if(leftResult > result)
+    result = leftResult;
 
-class BinarySearchTree {
-  constructor() {
-    this.root = null;
-  }
+  if(rightResult > result)
+    result = rightResult;
+    
+  return result;
 }
 
-    insert(value){
-        let newNode = new Node(value);
-        if(this.root === null){
-            this.root = newNode;
-            return this;
-        }
-    }
+let tree = new BinaryTree();
 
-module.exports(BinaryTree, BinarySearchTree);
+tree.root = new Node('1');
+tree.root.left = new Node('2');
+tree.root.left.left = new Node('3');
+tree.root.left.left.left = new Node('4');
+tree.root.left.left.right = new Node('5');
+tree.root.right = new Node('6');
+tree.root.right.right = new Node('7');
+tree.root.right.right.left = new Node('8');
+tree.root.right.right.right = new Node('9');
+
+console.log('Pre Order:');
+PreOrder(tree.root);
+console.log('**********');
+console.log('In Order:');
+InOrder(tree.root);
+console.log('**********');
+console.log('Post Order:');
+PostOrder(tree.root);
+console.log('**********');
+console.log('Find Max:', FindMax(tree.root));
+
+
+//         1
+//        / \
+//       2   6
+//      /     \
+//     3       7
+//    / \     / \
+//   4   5   8   9
+
+// class BinarySearchTree {
+//   constructor() {
+//     this.root = null;
+//   }
+// }
+
+//     insert(value) 
+//         let newNode = new Node(value);
+//         if(this.root === null){
+//             this.root = newNode;
+//             return this;
+//         }
+    
+
