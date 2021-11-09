@@ -1,0 +1,15 @@
+{
+  "name": "trees",
+  "version": "1.0.0",
+  "description": "<!-- Short summary or background information -->",
+  "main": "binaryTree.js",
+  "scripts": {
+    "test": "json --coverage --verbose"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node": "^17.0.1"
+  }
+}
