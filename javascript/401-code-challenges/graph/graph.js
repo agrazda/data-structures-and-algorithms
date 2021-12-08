@@ -8,33 +8,36 @@ const Edge = require("./edge");
  */
 class Graph {
   constructor() {
-    this.adjacencyList = new Map();
-    this.numNodes = 0;
+    this.edges = new Map();
+    this.vertices = 0;
   }
 
   size() {
-    return this.numNodes++;
+    return this.vertices.size;
   }
 
   getVertex() {
-    return this.getVertex
+    return this.vertices.values();
   }
     
+  getNeighbors(vertex){
+    return this.edges.get(vertex);
+  }
 
   // adding a value to our adjency
   addVertex(value) {
     let payload = new Vertex(value);
-    this.adjacencyList.set(payload, []);
+    this.edges.set(payload, []);
 
     return payload;
   }
 
   // add method should specify direct vs undirected, adding a connection between vertices
-  addDirectedEdge(startVertex, endVertex, weight = 0) {
+  addDirectedEdge(start, end, weight = 0) {
     // check if the vertex exists in our list of vertices.
     if (
-      !this.adjacencyList.has(startVertex) &&
-      !this.adjacencyList.has(endVertex)
+      !this.edges.has(start) ||
+      !this.edges.has(end)
     ) {
       throw new Error("Vertex Error");
     }
@@ -42,7 +45,7 @@ class Graph {
     // what should do to add them to our adjacency values?
 
     // grab all edges connected to the starting vertex
-    let neighbors = this.adjacencyList.get(startVertex);
+    let neighbors = this.edges.get(startVertex);
 
     // create a new edge from our ending vertex and push it into the list of neighbors.
     let newEdge = new Edge(endVertex, weight);
@@ -50,12 +53,12 @@ class Graph {
   }
 
   getNeighbors(vertex) {
-    if (!this.adjacencyList.has(vertex)) {
+    if (!this.edges.has(vertex)) {
       throw new Error("GET NEIGHBOR ERROR :: Invalid vertex");
     }
 
     // I don't want mutate this array
-    return [...this.adjacencyList.get(vertex)];
+    return [...this.edges.get(vertex)];
   }
 
   breadthFirst(startVertex) {
