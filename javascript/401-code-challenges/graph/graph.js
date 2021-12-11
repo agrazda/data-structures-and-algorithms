@@ -88,9 +88,21 @@ class Graph {
 
     return visitedNodes;
   }
+
+  depthFirst (vertex) {
+    let returnArray = [vertex.value];
+    const neighborList = this.getNeighbors(vertex);
+    for (const neighbor of neighborList) {
+      let newArray = this.depthFirst(neighbor.vertex);
+      for (const returnedNeighbor of newArray) {
+        if (!returnArray.includes(returnedNeighbor)) returnArray.push(returnedNeighbor);
+      }
+    }
+    return returnArray;
 }
 
-module.export = Graph
+
+module.exports = Graph;
 
 let graph = new Graph();
 
